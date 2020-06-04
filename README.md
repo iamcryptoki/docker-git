@@ -15,7 +15,7 @@ GID | Container non-root user GID | `2000`
 ## How to use this image
 
 ```
-$ docker run -ti --rm -v ${HOME}:/root -v $(pwd):/git iamcryptoki/git:2.24.1 <git_command>
+$ docker run -ti --rm -v ${HOME}:/root -v $(pwd):/git iamcryptoki/git <git_command>
 ```
 
 ## How to use this image as a CronJob in a Kubernetes cluster
@@ -48,7 +48,7 @@ spec:
                 claimName: example-git
           containers:
             - name: example-git
-              image: iamcryptoki/git:2.24.1
+              image: iamcryptoki/git
               imagePullPolicy: IfNotPresent
               securityContext:
                 runAsNonRoot: true
